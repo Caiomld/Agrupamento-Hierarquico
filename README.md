@@ -1,5 +1,5 @@
 <h1 align="center">
-    📊 Violência e Feminicídio no Brasil: Uma Abordagem Matemática 🗺️
+    📊 Violência e Feminicídio no Brasil: Uma Abordagem Matemática
 </h1>
 <p align="center">
   Este projeto aplica conceitos de Espaços Métricos e Álgebra Linear para analisar padrões de violência contra a mulher no Brasil, utilizando Agrupamento Hierárquico para identificar clusterizações socioculturais.
@@ -49,11 +49,11 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
 # ⚙️ Funcionalidades e Metodologia
 
 - **`Engenharia de Atributos`**: 
-  - [cite_start]**Normalização Demográfica**: Conversão de valores absolutos para taxas por 100 mil habitantes ($x'_{ij}$)[cite: 34].
-  - [cite_start]**Padronização (Z-Score)**: Ajuste para média 0 e desvio padrão 1, evitando que crimes mais frequentes dominem a métrica[cite: 39].
+  - **Normalização Demográfica**: Conversão de valores absolutos para taxas por 100 mil habitantes ($x'_{ij}$)[cite: 34].
+  - **Padronização (Z-Score)**: Ajuste para média 0 e desvio padrão 1, evitando que crimes mais frequentes dominem a métrica[cite: 39].
   
 - **`Modelagem Matemática (Métricas)`**: 
-  - [cite_start]Definição da distância entre estados $u$ e $v$ pela Família de Normas Minkowski ($L_p$)[cite: 47]:
+  - Definição da distância entre estados $u$ e $v$ pela Família de Normas Minkowski ($L_p$)[cite: 47]:
     $$d_p(u, v) = \left( \sum_{k=1}^{n} |u_k - v_k|^p \right)^{1/p}$$
   - **Topologias Testadas**:
     - $p=1$: Distância de Manhattan.
@@ -61,8 +61,8 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
     - $p=3$: Minkowski Cúbica.
    
 - **`Algoritmo de Machine Learning`**: 
-  - [cite_start]**Hierarchical Clustering**: Método aglomerativo utilizando o critério *Average Linkage*[cite: 57].
-  - [cite_start]**Validação**: Cálculo do *Adjusted Rand Index* (ARI) para comparar os clusters matemáticos com as regiões oficiais (Norte, Sul, etc.)[cite: 60].
+  - **Hierarchical Clustering**: Método aglomerativo utilizando o critério *Average Linkage*[cite: 57].
+  - **Validação**: Cálculo do *Adjusted Rand Index* (ARI) para comparar os clusters matemáticos com as regiões oficiais (Norte, Sul, etc.)[cite: 60].
 
 # 🎥 Demonstração dos Resultados
 
@@ -89,12 +89,12 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
     - **Geopandas**: (Se utilizado) Plotagem dos mapas do Brasil.
 
 # 🔎 Referências Principais
-- [cite_start]**Anuário Brasileiro de Segurança Pública**: Fonte primária dos dados criminais[cite: 31].
-- [cite_start]**IBGE**: Dados populacionais para normalização[cite: 34].
-- [cite_start]**Métricas de Distância**: *Overview of Agglomerative Hierarchical Clustering Methods* (Oti Eric U. et al.)[cite: 129].
-- [cite_start]**Sociologia**: *A Cultura do Patriarcado no Brasil* (Viana & Costa)[cite: 135].
+- **Anuário Brasileiro de Segurança Pública**: Fonte primária dos dados criminais.
+- **IBGE**: Dados populacionais para normalização.
+- **Métricas de Distância**: *Overview of Agglomerative Hierarchical Clustering Methods* (Oti Eric U. et al.).
+- **Sociologia**: *A Cultura do Patriarcado no Brasil* (Viana & Costa).
 
 # 👨‍💻 Desenvolvedores
 
-| [Ana Luz P. Mendes </sub>](https://github.com/SEU_USER) |  [Caio M. Leão Dantas </sub>](https://github.com/Caiomld) |  [Enzo J. Xavier </sub>](https://github.com/EnzoJanuzzi) |
+| [Ana Luz P. Mendes </sub>](https://github.com/LuzMendes) |  [Caio M. Leão Dantas </sub>](https://github.com/Caiomld) |  [Enzo J. Xavier </sub>](https://github.com/EnzoJanuzzi) |
 | :---: | :---: | :---: |
