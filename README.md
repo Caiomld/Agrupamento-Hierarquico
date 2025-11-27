@@ -49,11 +49,11 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
 # ⚙️ Funcionalidades e Metodologia
 
 - **`Engenharia de Atributos`**: 
-  - **Normalização Demográfica**: Conversão de valores absolutos para taxas por 100 mil habitantes ($x'_{ij}$)[cite: 34].
-  - **Padronização (Z-Score)**: Ajuste para média 0 e desvio padrão 1, evitando que crimes mais frequentes dominem a métrica[cite: 39].
+  - **Normalização Demográfica**: Conversão de valores absolutos para taxas por 100 mil habitantes ($x'_{ij}$).
+  - **Padronização (Z-Score)**: Ajuste para média 0 e desvio padrão 1, evitando que crimes mais frequentes dominem a métrica.
   
 - **`Modelagem Matemática (Métricas)`**: 
-  - Definição da distância entre estados $u$ e $v$ pela Família de Normas Minkowski ($L_p$)[cite: 47]:
+  - Definição da distância entre estados $u$ e $v$ pela Família de Normas Minkowski ($L_p$):
     $$d_p(u, v) = \left( \sum_{k=1}^{n} |u_k - v_k|^p \right)^{1/p}$$
   - **Topologias Testadas**:
     - $p=1$: Distância de Manhattan.
@@ -61,23 +61,26 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
     - $p=3$: Minkowski Cúbica.
    
 - **`Algoritmo de Machine Learning`**: 
-  - **Hierarchical Clustering**: Método aglomerativo utilizando o critério *Average Linkage*[cite: 57].
-  - **Validação**: Cálculo do *Adjusted Rand Index* (ARI) para comparar os clusters matemáticos com as regiões oficiais (Norte, Sul, etc.)[cite: 60].
+  - **Hierarchical Clustering**: Método aglomerativo utilizando o critério *Average Linkage*.
+  - **Validação**: Cálculo do *Adjusted Rand Index* (ARI) para comparar os clusters matemáticos com as regiões oficiais (Norte, Sul, etc.).
 
 # 🎥 Demonstração dos Resultados
 
 ***Dendrogramas e Clusterização Espacial:***
-*Abaixo, a comparação entre os agrupamentos gerados pela métrica Euclidiana e os mapas resultantes. Nota-se que Roraima e Amapá se isolam como outliers.*
+*Abaixo, o mapa representativa da clusterização para a métrica Manhattan. Nota-se que Roraima e Amapá se isolam como outliers. Mais mapas podem ser vistos em [imagens](https://github.com/Caiomld/Agrupamento-Hierarquico/tree/main/imagens).
 
-![Dendrogramas e Mapas](imagens/Métricas.jpg)
+![Dendrogramas e Mapas](imagens/mapa_manhattan.png)
 
 ***Matrizes de Distância:***
-*Visualização (Heatmap) da dissimilaridade entre cada par de estados. Cores mais escuras indicam maior proximidade cultural/criminal.*
+*Visualização (Heatmap) da dissimilaridade entre cada par de estados para métrica Euclidiana. Cores mais escuras indicam maior proximidade cultural/criminal. Mais matrizes podem ser vistas em [imagens](https://github.com/Caiomld/Agrupamento-Hierarquico/tree/main/imagens)*
 
-![Matrizes de Distância](imagens/Matrizes.jpg) ***Análise de Atributos (PCA e Boxplot):***
+![Matrizes de Distância](imagens/matriz_dist_euclidiana.png) 
+
+***Análise de Atributos (PCA e Boxplot):***
 *A projeção PCA (a) mostra a dispersão dos estados, enquanto os Boxplots (b) revelam que "Exploração Sexual" e "MPU Distribuídas" são os fatores determinantes para os agrupamentos.*
 
-![PCA e Boxplot](imagens/Euclidiana.jpg)
+![PCA](imagens/PCA.png)]
+![Boxplot](imagens/boxplot.png)
 
 # 🖥️ Ferramentas Utilizadas
 - **Jupyter Notebook**: Ambiente de desenvolvimento.
@@ -86,13 +89,12 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
     - **NumPy**: Álgebra linear e cálculo vetorial.
     - **Scikit-learn**: Algoritmos de clusterização, PCA e métricas de validação (ARI).
     - **Matplotlib / Seaborn**: Visualização de dados (Dendrogramas, Heatmaps).
-    - **Geopandas**: (Se utilizado) Plotagem dos mapas do Brasil.
+    - **Geopandas**: Plotagem dos mapas do Brasil.
 
 # 🔎 Referências Principais
 - **Anuário Brasileiro de Segurança Pública**: Fonte primária dos dados criminais.
 - **IBGE**: Dados populacionais para normalização.
 - **Métricas de Distância**: *Overview of Agglomerative Hierarchical Clustering Methods* (Oti Eric U. et al.).
-- **Sociologia**: *A Cultura do Patriarcado no Brasil* (Viana & Costa).
 
 # 👨‍💻 Desenvolvedores
 
