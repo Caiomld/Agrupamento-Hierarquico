@@ -2,7 +2,7 @@
     📊 Violência e Feminicídio no Brasil: Uma Abordagem Matemática
 </h1>
 <p align="center">
-  Este projeto aplica conceitos de Espaços Métricos e Álgebra Linear para analisar padrões de violência contra a mulher no Brasil, utilizando Agrupamento Hierárquico para identificar clusterizações socioculturais.
+  Este projeto aplica conceitos de Espaços Métricos e Álgebra Linear para analisar padrões de violência contra a mulher no Brasil, utilizando diferentes algoritmos de agrupamento para identificar clusterizações socioculturais.
 </p>
 
 <p align="center">
@@ -29,7 +29,7 @@
 
 Este projeto foi desenvolvido no âmbito da disciplina de **Espaços Normados** na Ilum Escola de Ciência (CNPEM). O objetivo central é investigar se a violência de gênero no Brasil respeita as fronteiras geográficas tradicionais ou se segue uma dinâmica territorial própria.
 
-Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimensional ($\mathbb{R}^{22}$), utilizamos dados do **Anuário Brasileiro de Segurança Pública** para calcular distâncias matemáticas entre os estados. Através de algoritmos de **Agrupamento Hierárquico**, buscamos identificar "regiões culturais da violência" e compará-las com a divisão regional oficial do IBGE.
+Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimensional ($\mathbb{R}^{22}$), utilizamos dados do **Anuário Brasileiro de Segurança Pública** para calcular distâncias matemáticas entre os estados. Através de algoritmos de **Agrupamento Hierárquico** e de **Fuzzy C-Means**, buscamos identificar "regiões culturais da violência" e compará-las com a divisão regional oficial do IBGE.
 
 # 📁 Acesso e Utilização
 
@@ -42,7 +42,8 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
 4.  **Análise:** As células finais geram os Boxplots e a projeção PCA para validação dos clusters.
 
 **Estrutura do Repositório:**
-- **`agrupamento_hierarquico.ipynb`**: Notebook principal contendo toda a lógica de ETL, matemática e plotagem.
+- **`agrupamento_hierarquico.ipynb`**: Notebook com o algoritmo de Agrupamento Hierárquico, contendo toda a lógica de ETL, matemática e plotagem.
+- **`Fuzzy C-Means Clustering.ipynb`**: Notebook com o algoritmo de Fuzzy C-Means, contendo toda a lógica de ETL, matemática e plotagem.
 - **`imagens/`**: Pasta contendo os dendrogramas, mapas coloridos por cluster e matrizes de distância.
 - **`dados/`**: Contém a base de dados bruta extraída do Anuário.
 
@@ -60,19 +61,20 @@ Tratando cada Unidade Federativa (UF) como um vetor em um espaço multidimension
     - $p=2$: Distância Euclidiana.
     - $p=3$: Minkowski Cúbica.
    
-- **`Algoritmo de Machine Learning`**: 
-  - **Hierarchical Clustering**: Método aglomerativo utilizando o critério *Average Linkage*.
+- **`Algoritmos de Machine Learning`**: 
+  - **Hierarchical Clustering**: Método aglomerativo utilizando o critério *Average Linkage* (scipy.cluster.hierarchy).
+  - **Fuzzy C-Means Clustering**: Método aglomerativo realizado após a aplicação de PCA nos dados (fcmeans.FCM)
   - **Validação**: Cálculo do *Adjusted Rand Index* (ARI) para comparar os clusters matemáticos com as regiões oficiais (Norte, Sul, etc.).
 
 # 🎥 Demonstração dos Resultados
 
 ***Dendrogramas e Clusterização Espacial:***
-*Abaixo, o mapa representativa da clusterização para a métrica Manhattan. Nota-se que Roraima e Amapá se isolam como outliers. Mais mapas podem ser vistos em [imagens](https://github.com/Caiomld/Agrupamento-Hierarquico/tree/main/imagens).
+*Abaixo, o mapa representativo da clusterização para a métrica Manhattan. Nota-se que Roraima e Amapá se isolam como outliers. Mais mapas podem ser vistos em [imagens](https://github.com/Caiomld/Agrupamento-Hierarquico/tree/main/imagens).
 
 ![Dendrogramas e Mapas](imagens/mapa_manhattan.png)
 
 ***Matrizes de Distância:***
-*Visualização (Heatmap) da dissimilaridade entre cada par de estados para métrica Euclidiana. Cores mais escuras indicam maior proximidade cultural/criminal. Mais matrizes podem ser vistas em [imagens](https://github.com/Caiomld/Agrupamento-Hierarquico/tree/main/imagens)*
+*Visualização (Heatmap) da dissimilaridade entre cada par de estados para a métrica Euclidiana. Cores mais escuras indicam maior proximidade cultural/criminal. Mais matrizes podem ser vistas em [imagens](https://github.com/Caiomld/Agrupamento-Hierarquico/tree/main/imagens)*
 
 ![Matrizes de Distância](imagens/matriz_dist_euclidiana.png) 
 
